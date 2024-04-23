@@ -17,6 +17,9 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        shard: ['A', 'B']
 
     steps:
       - name: Checkout
@@ -31,6 +34,6 @@ jobs:
       - name: Set up Gradle
         uses: gradle/gradle-build-action@v3.1.0
 
-      - name: Test
+      - name: Test ${{ matrix.shard }}
         run: ./gradlew test
 
