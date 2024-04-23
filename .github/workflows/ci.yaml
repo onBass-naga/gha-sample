@@ -15,11 +15,16 @@ on:
 
 jobs:
   build:
+    name: test ${{ matrix.dummy }}
 
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        shard: ['A', 'B']
+        shard:
+          - name: 'A'
+            value: 1
+          - name: 'B'
+            value: 2
 
     steps:
       - name: Checkout
@@ -34,6 +39,5 @@ jobs:
       - name: Set up Gradle
         uses: gradle/gradle-build-action@v3.1.0
 
-      - name: Test ${{ matrix.shard }}
+      - name: Test ${{ matrix.shard.name }}
         run: ./gradlew test
-

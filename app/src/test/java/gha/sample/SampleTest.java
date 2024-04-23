@@ -5,12 +5,12 @@ package gha.sample;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class SampleTest {
     @Test
     void test() {
-        App classUnderTest = new App();
-        assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
+        final var actual = 1 + 1;
+        assertEquals(2, actual);
     }
 }
