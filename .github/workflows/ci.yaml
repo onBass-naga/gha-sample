@@ -15,12 +15,16 @@ on:
 
 jobs:
   build:
-    name: test ${{ join(matrix.shard, '-') }}
+    name: test ${{ matrix.runner.value }}
 
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        shard: ['A', 'B']
+        shard:
+          - name: 'A'
+            value: 1
+          - name: 'B'
+            value: 2
 
     steps:
       - name: Checkout
