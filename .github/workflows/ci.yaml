@@ -15,7 +15,7 @@ on:
 
 jobs:
   build:
-    name: test
+    name: test ${{ join(matrix.shard, '-') }}
 
     runs-on: ubuntu-latest
     strategy:
