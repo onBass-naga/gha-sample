@@ -11,6 +11,6 @@ class SampleTest {
     @Test
     void test() {
         final var actual = 1 + 1;
-        assertEquals(2, actual);
+        assertEquals(3, actual);
     }
 }
