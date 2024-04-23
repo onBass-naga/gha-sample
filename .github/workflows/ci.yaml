@@ -41,10 +41,3 @@ jobs:
 
       - name: Test ${{ matrix.shard.name }}
         run: ./gradlew test
-
-  status:
-    runs-on: ubuntu-latest
-    needs: ['build']
-    steps:
-      - name: Status Check
-        run: echo ${{ job.status }}
